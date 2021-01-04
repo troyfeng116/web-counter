@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import Button, { ButtonVariant } from '../Button'
+import { ButtonSize } from '../Button/Button'
 import Counter from '../Counter'
 
 export const RootPage: React.FC = () => {
@@ -12,6 +13,7 @@ export const RootPage: React.FC = () => {
                 <Button
                     title="New counter"
                     variant={ButtonVariant.Green}
+                    size={ButtonSize.Large}
                     onClick={() => {
                         setCounterComponents([...counterComponents, <Counter key={counterComponents.length} />])
                     }}

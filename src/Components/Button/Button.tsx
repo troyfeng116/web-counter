@@ -3,6 +3,7 @@ import React from 'react'
 interface ButtonProps {
     title: string
     variant: ButtonVariant
+    size: ButtonSize
     onClick: () => void
     fullWidth?: boolean
 }
@@ -15,8 +16,14 @@ export enum ButtonVariant {
     Minus = 'Minus',
 }
 
+export enum ButtonSize {
+    Small = 'Small',
+    Medium = 'Medium',
+    Large = 'Large',
+}
+
 export const Button: React.FC<ButtonProps> = (props) => {
-    const { title, variant, onClick, fullWidth } = props
+    const { title, size, variant, onClick, fullWidth } = props
 
     let baseClassName = ''
     let hoverClassName = ''
@@ -43,8 +50,21 @@ export const Button: React.FC<ButtonProps> = (props) => {
             break
     }
 
+    let pY = ''
+    switch (size) {
+        case ButtonSize.Small:
+            pY = 'py-0'
+            break
+        case ButtonSize.Medium:
+            pY = 'py-1'
+            break
+        case ButtonSize.Large:
+            pY = 'py-2'
+            break
+    }
+
     return (
-        <div className={`${fullWidth === true ? 'w-full' : ''} py-1 px-4 cursor-pointer rounded shadow font-bold text-center ${baseClassName} ${hoverClassName}`} onClick={onClick}>
+        <div className={`${fullWidth === true ? 'w-full' : ''} ${pY} px-4 cursor-pointer rounded shadow font-bold text-center ${baseClassName} ${hoverClassName}`} onClick={onClick}>
             {title}
         </div>
     )
