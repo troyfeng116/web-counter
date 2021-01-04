@@ -4,6 +4,7 @@ interface ButtonProps {
     title: string
     variant: ButtonVariant
     onClick: () => void
+    fullWidth?: boolean
 }
 
 export enum ButtonVariant {
@@ -15,7 +16,7 @@ export enum ButtonVariant {
 }
 
 export const Button: React.FC<ButtonProps> = (props) => {
-    const { title, variant, onClick } = props
+    const { title, variant, onClick, fullWidth } = props
 
     let baseClassName = ''
     let hoverClassName = ''
@@ -33,17 +34,17 @@ export const Button: React.FC<ButtonProps> = (props) => {
             hoverClassName = 'hover:bg-gray-500'
             break
         case ButtonVariant.Plus:
-            baseClassName = 'bg-gray-600 text-green-300 text-3xl py-0 px-8'
+            baseClassName = 'bg-gray-600 text-green-300 text-3xl py-0 px-16'
             hoverClassName = 'hover:bg-gray-700'
             break
         case ButtonVariant.Minus:
-            baseClassName = 'bg-gray-600 text-red-300 text-3xl py-0 px-8'
+            baseClassName = 'bg-gray-600 text-red-300 text-3xl py-0 px-16'
             hoverClassName = 'hover:bg-gray-700'
             break
     }
 
     return (
-        <div className={`py-2 px-4 cursor-pointer rounded shadow font-bold ${baseClassName} ${hoverClassName}`} onClick={onClick}>
+        <div className={`${fullWidth === true ? 'w-full' : ''} py-2 px-4 cursor-pointer rounded shadow font-bold text-center ${baseClassName} ${hoverClassName}`} onClick={onClick}>
             {title}
         </div>
     )
