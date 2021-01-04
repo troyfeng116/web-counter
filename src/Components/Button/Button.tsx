@@ -44,7 +44,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     }
 
     return (
-        <div className={`${fullWidth === true ? 'w-full' : ''} py-2 px-4 cursor-pointer rounded shadow font-bold text-center ${baseClassName} ${hoverClassName}`} onClick={onClick}>
+        <div className={`${fullWidth === true ? 'w-full' : ''} py-1 px-4 cursor-pointer rounded shadow font-bold text-center ${baseClassName} ${hoverClassName}`} onClick={onClick}>
             {title}
         </div>
     )
