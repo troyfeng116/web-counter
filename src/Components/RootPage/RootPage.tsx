@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
-import Button, { ButtonVariant } from '../Button'
-import { ButtonSize } from '../Button/Button'
+import Button, { ButtonSize, ButtonVariant } from '../Button'
 import Counter from '../Counter'
 
 export const RootPage: React.FC = () => {

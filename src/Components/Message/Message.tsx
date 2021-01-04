@@ -11,7 +11,6 @@ export const Message: React.FC<MessageProps> = (props) => {
 
     useEffect(() => {
         if (messageText.length > 0) {
-            console.log(messageText)
             setClassName('opacity-100')
             let innerTimeout: NodeJS.Timeout
             const timeout = setTimeout(() => {

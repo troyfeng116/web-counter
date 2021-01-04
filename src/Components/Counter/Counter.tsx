@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
-import Button, { ButtonVariant } from '../Button'
-import { ButtonSize } from '../Button/Button'
+import Button, { ButtonSize, ButtonVariant } from '../Button'
 import { Message } from '../Message/Message'
 import { TextField } from '../TextField/TextField'
 
