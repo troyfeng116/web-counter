@@ -16,7 +16,7 @@ export const Counter: React.FC = () => {
                 <Button title="+" size={ButtonSize.Small} variant={ButtonVariant.Plus} onClick={() => setCount(count + 1)} />
             </div>
             <div className="w-full mb-3">
-                <Button title="Reset counter" size={ButtonSize.Small} variant={ButtonVariant.Grey} onClick={() => setCount(0)} fullWidth={true} />
+                <Button title="Reset counter" size={ButtonSize.Medium} variant={ButtonVariant.Grey} onClick={() => setCount(0)} fullWidth={true} />
             </div>
             <div className="flex justify-center items-center w-full bg-gray-200 py-1 px-4 mb-3 rounded">
                 <div className="mr-4">Set counter to:</div>
