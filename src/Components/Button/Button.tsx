@@ -14,7 +14,7 @@ export enum ButtonVariant {
     Minus = 'Minus',
 }
 
-export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
+export const Button: React.FC<ButtonProps> = (props) => {
     const { title, variant, onClick } = props
 
     let baseClassName = ''
@@ -43,10 +43,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     }
 
     return (
-        <div
-            className={`py-2 px-4 cursor-pointer rounded shadow font-bold ${baseClassName} ${hoverClassName}`}
-            onClick={onClick}
-        >
+        <div className={`py-2 px-4 cursor-pointer rounded shadow font-bold ${baseClassName} ${hoverClassName}`} onClick={onClick}>
             {title}
         </div>
     )

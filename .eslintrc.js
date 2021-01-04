@@ -50,7 +50,7 @@ module.exports = {
                 enforceForRenamedProperties: false,
             },
         ],
-        'simple-import-sort/sort': 'error',
+        'simple-import-sort/imports': 'error',
         'sort-imports': 'off',
         'import/order': 'off',
     },
@@ -58,7 +58,7 @@ module.exports = {
         {
             files: ['*'],
             rules: {
-                'simple-import-sort/sort': [
+                'simple-import-sort/imports': [
                     'error',
                     {
                         groups: [
