@@ -20,7 +20,7 @@ export const Counter: React.FC = () => {
     return (
         <div className="w-96 bg-white mx-auto shadow flex flex-col items-center mb-6 p-6">
             <div className="w-full flex justify-between items-center bg-gray-200 py-1 px-4 mb-3 rounded-lg">
-                <Message messageText={messageText} />
+                <Message messageText={messageText} setMessageText={setMessageText} />
                 <div className="text-5xl">{count}</div>
             </div>
             <div className="w-full flex items-center justify-between mb-9">
