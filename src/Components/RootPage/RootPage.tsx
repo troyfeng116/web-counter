@@ -6,11 +6,17 @@ import Counter from '../Counter'
 
 export const RootPage: React.FC = () => {
     const [counterIds, setCounterIds] = useState<string[]>([generateId(10)])
+
+    const deleteCounterAt = (index: number): void => {
+        const newCounterIds = counterIds.slice(0, index).concat(counterIds.slice(index + 1))
+        setCounterIds(newCounterIds)
+    }
+
     return (
         <div className="bg-blue-100 min-h-screen p-12">
             <div className="w-full flex flex-col items-center">
-                {counterIds.map((id) => (
-                    <Counter key={id} />
+                {counterIds.map((id, index) => (
+                    <Counter key={id} deleteThisCounter={() => deleteCounterAt(index)} />
                 ))}
                 <Button
                     title="New counter"
