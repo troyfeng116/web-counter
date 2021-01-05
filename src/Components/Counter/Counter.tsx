@@ -3,8 +3,8 @@ import { FaWindowClose } from 'react-icons/fa'
 
 import { parseIntWithNaN } from '../../Utils/parseIntWithNaN'
 import Button, { ButtonSize, ButtonVariant } from '../Button'
-import { Message } from '../Message/Message'
-import { TextField } from '../TextField/TextField'
+import Message from '../Message'
+import TextField from '../TextField'
 
 interface CounterProps {
     deleteThisCounter: () => void
