@@ -2,6 +2,7 @@
     "name": "web-counter",
     "version": "0.1.0",
     "private": true,
+    "homepage": "http://troyfeng116.github.io/web-counter",
     "dependencies": {
         "@craco/craco": "^6.0.0",
         "@tailwindcss/postcss7-compat": "^2.0.2",
@@ -26,7 +27,9 @@
         "start": "craco start",
         "build": "craco build",
         "test": "craco test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -51,6 +54,7 @@
         "eslint-plugin-prettier": "^3.3.0",
         "eslint-plugin-react": "^7.22.0",
         "eslint-plugin-simple-import-sort": "^7.0.0",
+        "gh-pages": "^3.1.0",
         "prettier": "2.2.1",
         "prettier-eslint": "^12.0.0"
     }
