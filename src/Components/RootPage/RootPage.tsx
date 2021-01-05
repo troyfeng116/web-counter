@@ -13,7 +13,8 @@ export const RootPage: React.FC = () => {
     }
 
     return (
-        <div className="bg-blue-100 min-h-screen p-12">
+        <div className="bg-blue-100 min-h-screen p-12 flex flex-col items-center">
+            <header className="mb-12 text-4xl uppercase font-bold">Online Counter</header>
             <div className="w-full flex flex-col items-center">
                 {counterIds.map((id, index) => (
                     <Counter key={id} deleteThisCounter={() => deleteCounterAt(index)} />
