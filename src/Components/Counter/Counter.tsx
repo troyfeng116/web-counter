@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
+import { parseIntWithNaN } from '../../Utils/parseIntWithNaN'
 import Button, { ButtonSize, ButtonVariant } from '../Button'
 import { Message } from '../Message/Message'
 import { TextField } from '../TextField/TextField'
@@ -8,13 +9,8 @@ export const Counter: React.FC = () => {
     const [count, setCount] = useState<number>(0)
     const [newCountText, setNewCountText] = useState<string>('')
     const [incrementText, setIncrementText] = useState<string>('1')
-    const [increment, setIncrement] = useState<number>(1)
+    const increment = useRef<number>(1)
     const [messageText, setMessageText] = useState<string>('New counter added!')
-
-    const parseIntWithNaN = (s: string): number => {
-        const n = parseInt(s)
-        return isNaN(n) ? 0 : n
-    }
 
     return (
         <div className="w-96 bg-white mx-auto shadow flex flex-col items-center mb-6 p-6">
@@ -23,8 +19,8 @@ export const Counter: React.FC = () => {
                 <div className="text-5xl">{count}</div>
             </div>
             <div className="w-full flex items-center justify-between mb-9">
-                <Button title="-" size={ButtonSize.Small} variant={ButtonVariant.Minus} onClick={() => setCount(count - increment)} />
-                <Button title="+" size={ButtonSize.Small} variant={ButtonVariant.Plus} onClick={() => setCount(count + increment)} />
+                <Button title="-" size={ButtonSize.Small} variant={ButtonVariant.Minus} onClick={() => setCount(count - increment.current)} />
+                <Button title="+" size={ButtonSize.Small} variant={ButtonVariant.Plus} onClick={() => setCount(count + increment.current)} />
             </div>
             <div className="w-full mb-3">
                 <Button
@@ -81,7 +77,7 @@ export const Counter: React.FC = () => {
                     variant={ButtonVariant.Grey}
                     onClick={() => {
                         const x = parseIntWithNaN(incrementText)
-                        setIncrement(x)
+                        increment.current = x
                         setMessageText(`Increment set to ${x}`)
                     }}
                 />
