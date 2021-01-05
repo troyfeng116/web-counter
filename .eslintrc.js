@@ -64,8 +64,6 @@ module.exports = {
                         groups: [
                             // Style imports.
                             ['^.+\\.s?css$'],
-                            ['^firebase|', ''],
-                            ['firebase'],
 
                             // Node.js builtins. You could also generate this regex if you use a `.js` config.
                             // For example: `^(${require("module").builtinModules.join("|")})(/|$)`
@@ -74,10 +72,6 @@ module.exports = {
                             ],
                             // Packages. `react` related packages come first.
                             ['^react', '^@?\\w'],
-                            // Internal packages.
-                            ['^(Authentication|Components|Constants|Config|FirebaseHelpers|Mixpanel|Models|Utils)(/.*|$)'],
-                            // Side effect imports.
-                            ['^\\u0000'],
                             // Parent imports. Put `..` last.
                             ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
                             // Other relative imports. Put same-folder imports and `.` last.
