@@ -3,6 +3,7 @@ import { FaWindowClose } from 'react-icons/fa'
 
 import { parseIntWithNaN } from '../../Utils/parseIntWithNaN'
 import Button, { ButtonSize, ButtonVariant } from '../Button'
+import Label from '../Label'
 import Message from '../Message'
 import TextField from '../TextField'
 
@@ -23,6 +24,9 @@ export const Counter: React.FC<CounterProps> = (props) => {
         <div className="w-96 bg-white mx-auto shadow flex flex-col items-center mb-6 px-6 py-4">
             <div className="cursor-pointer w-max ml-auto mb-4 -mt-2 -mr-3 text-xl text-gray-400 hover:text-gray-500" onClick={deleteThisCounter}>
                 <FaWindowClose />
+            </div>
+            <div className="mb-3 w-full">
+                <Label />
             </div>
             <div className="w-full flex justify-between items-center bg-gray-200 py-1 px-4 mb-3 rounded-lg">
                 <Message messageText={messageText} setMessageText={setMessageText} />
@@ -64,6 +68,7 @@ export const Counter: React.FC<CounterProps> = (props) => {
                         const x = parseIntWithNaN(newCountText)
                         setCount(x)
                         setMessageText(`Counter set to ${x}`)
+                        setNewCountText('')
                     }}
                 />
             </div>
